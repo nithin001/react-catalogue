@@ -12,3 +12,9 @@ This is a running document that captures design decisions, assumptions, limitati
   * Adding babel support for webpack
 ##### Adding React
   * Ah! The important piece. Turned out to be simple. Separated webpack config into two: dev, prod. Added babel support for react. And we are good to go with React.
+##### Adding CSS Preproccessor
+  * I want to keep this simple here too. I didn't add any autoprefixer. Only a simple sass loader.
+##### Adding test harness
+  * I added enzyme because of the snapshot testing feature which I like. I also added jest which is required by enzyme.
+##### Adding Lint Support 
+  * As a final piece to the scaffolding, I've added eslint support for the app. I've also extended AirBnB's js style guide for the rules. I think we are all set to go. I will add redux, router when the need arises.

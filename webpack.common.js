@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const config = {
   context: path.resolve(__dirname, "src"),
   entry: {
-    app: "./app.js",
+    app: "./app.jsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -14,13 +14,13 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Acme tech shop",
-      template: 'index.html'
+      template: "index.html",
     }),
   ],
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js|\.jsx$/,
         include: /src/,
         exclude: /node_modules/,
         use: {
@@ -29,6 +29,19 @@ const config = {
             presets: ["env", "react"],
           },
         },
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "sass-loader",
+          }],
       },
     ],
   },
