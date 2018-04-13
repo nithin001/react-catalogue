@@ -10,3 +10,5 @@ This is a running document that captures design decisions, assumptions, limitati
   * I am going to use webpack for module loader and not going to use any script runner. My opinion here is not to add anything unless it absolutely needed.
 ##### Add babel
   * Adding babel support for webpack
+##### Adding React
+  * Ah! The important piece. Turned out to be simple. Separated webpack config into two: dev, prod. Added babel support for react. And we are good to go with React.
