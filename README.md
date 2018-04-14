@@ -18,3 +18,9 @@ This is a running document that captures design decisions, assumptions, limitati
   * I added enzyme because of the snapshot testing feature which I like. I also added jest which is required by enzyme.
 ##### Adding Lint Support 
   * As a final piece to the scaffolding, I've added eslint support for the app. I've also extended AirBnB's js style guide for the rules. I think we are all set to go. I will add redux, router when the need arises.
+
+## Day 2: API communication
+   * I have started with the API communication part for the catalog endpoint. I have used axios for communication. Other option is fetch. I used TDD for the entire piece. Always coded only on a red bar and refactored on green bar.
+   * I have used JSON schema validator to handle the contract between the front end and back end. Any missing fields in the contract will be treated as a backend failure.
+   * I used https://jsonschema.net/ to generate the JSON schema
+   * I will handle the slow network issue at redux level

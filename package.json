@@ -6,6 +6,7 @@
   "author": "nithin001 <nithin.ktg@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
@@ -34,6 +35,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "ajv": "^6.4.0",
+    "axios": "^0.18.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.3",
