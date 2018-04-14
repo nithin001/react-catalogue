@@ -24,3 +24,5 @@ This is a running document that captures design decisions, assumptions, limitati
    * I have used JSON schema validator to handle the contract between the front end and back end. Any missing fields in the contract will be treated as a backend failure.
    * I used https://jsonschema.net/ to generate the JSON schema
    * I will handle the slow network issue at redux level
+   * Completed communication part for article endoint. I was able to reuse some of the code from the catalog endpoint.
+   

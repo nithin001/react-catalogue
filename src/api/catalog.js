@@ -3,7 +3,7 @@ import Ajv from 'ajv';
 
 const get = () => {
   return new Promise((resolve, reject) => {
-    instance.get('http://challenge.monoqi.net/catalog')
+    instance.get('/catalog')
       .then((response) => {
         if (response.data === undefined) {
           reject('backend_error');
