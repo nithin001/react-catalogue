@@ -1,7 +1,7 @@
 import instance from './base';
 import Ajv from 'ajv';
 
-const get = () => {
+export const get = () => {
   return new Promise((resolve, reject) => {
     instance.get('/catalog')
       .then((response) => {
@@ -24,8 +24,6 @@ const get = () => {
       });
   });
 };
-
-export default get;
 
 const schema = {
   '$id': 'http://challenge.monoqi.net/catalog',

@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
 import base from '../../src/api/base';
-import get from '../../src/api/catalog';
+import { get } from '../../src/api/catalog';
 describe('catalog api', () => {
   var mock = new MockAdapter(base);
   var mockArticle = {
@@ -101,27 +101,29 @@ describe('catalog api', () => {
       done();
     });
   });
-  it('should throw error when the catalogue endpoint does not return valid data - missing currency in price', (done) => {
-    const invalidArticle = { ...mockArticle };
-    delete invalidArticle['price']['currency'];
-    mock.onGet('/catalog').reply(200, {
-      'articles': [invalidArticle]
+  it('should throw error when the catalogue endpoint does not return valid data - missing currency in price',
+    (done) => {
+      const invalidArticle = { ...mockArticle };
+      delete invalidArticle['price']['currency'];
+      mock.onGet('/catalog').reply(200, {
+        'articles': [invalidArticle]
+      });
+      return get().catch((error) => {
+        expect(error).toEqual('backend_error');
+        done();
+      });
     });
-    return get().catch((error) => {
-      expect(error).toEqual('backend_error');
-      done();
+  it('should throw error when the catalogue endpoint does not return valid data - missing currency in amount',
+    (done) => {
+      const invalidArticle = { ...mockArticle };
+      delete invalidArticle['price']['amount'];
+      mock.onGet('/catalog').reply(200, {
+        'articles': [invalidArticle]
+      });
+      return get().catch((error) => {
+        expect(error).toEqual('backend_error');
+        done();
+      });
     });
-  });
-  it('should throw error when the catalogue endpoint does not return valid data - missing currency in amount', (done) => {
-    const invalidArticle = { ...mockArticle };
-    delete invalidArticle['price']['amount'];
-    mock.onGet('/catalog').reply(200, {
-      'articles': [invalidArticle]
-    });
-    return get().catch((error) => {
-      expect(error).toEqual('backend_error');
-      done();
-    });
-  });
 });
 

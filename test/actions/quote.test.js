@@ -14,7 +14,7 @@ describe('quote actions', () => {
     'sku': '938821',
     'quantity': 1
   }];
-  it('should fire LOAD_QUOTE_START action when load cart is called', (done) => {
+  it('should fire LOAD_QUOTE_START action when load quote is called', (done) => {
     const store = mockStore({});
     return store.dispatch(load(cart))
       .then(() => {
