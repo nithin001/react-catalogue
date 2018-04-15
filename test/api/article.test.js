@@ -14,7 +14,7 @@ describe('article api', () => {
     'price': { 'amount': 229, 'currency': 'EUR' }
   };
 
-  test.only('should return the article successfully from server', (done) => {
+  test('should return the article successfully from server', (done) => {
     mock.onGet('/article/199203').reply(200, mockArticle);
     get(199203).then((response) => {
       expect(response).toEqual(mockArticle);
@@ -54,44 +54,53 @@ describe('article api', () => {
     });
   });
 
-  test('should throw error when the catalogue endpoint does not return valid data', (done) => {
-    let invalidArticle = { ...mockArticle };
+  test('should throw error when the catalogue endpoint does not return valid data - missing sku', (done) => {
+    const invalidArticle = { ...mockArticle };
     delete invalidArticle['sku'];
     mock.onGet('/article/199203').reply(200, invalidArticle);
     get(199203).catch((error) => {
       expect(error).toEqual('backend_error');
+      done();
     });
-    mock.reset();
-
-    invalidArticle = { ...mockArticle };
+  });
+  test('should throw error when the catalogue endpoint does not return valid data - missing price', (done) => {
+    const invalidArticle = { ...mockArticle };
     delete invalidArticle['price'];
     mock.onGet('/article/199203').reply(200, invalidArticle);
     get(199203).catch((error) => {
       expect(error).toEqual('backend_error');
+      done();
     });
-
-    invalidArticle = { ...mockArticle };
+  });
+  test('should throw error when the catalogue endpoint does not return valid data - missing name', (done) => {
+    const invalidArticle = { ...mockArticle };
     delete invalidArticle['name'];
     mock.onGet('/article/199203').reply(200, invalidArticle);
     get(199203).catch((error) => {
       expect(error).toEqual('backend_error');
+      done();
     });
-
-    invalidArticle = { ...mockArticle };
+  });
+  test('should throw error when the catalogue endpoint does not return valid data - missing image', (done) => {
+    const invalidArticle = { ...mockArticle };
     delete invalidArticle['image'];
     mock.onGet('/article/199203').reply(200, invalidArticle);
     get(199203).catch((error) => {
       expect(error).toEqual('backend_error');
+      done();
     });
-
-    invalidArticle = { ...mockArticle };
+  });
+  test('should throw error when the catalogue endpoint does not return valid data - missing currency in price', (done) => {
+    const invalidArticle = { ...mockArticle };
     delete invalidArticle['price']['currency'];
     mock.onGet('/article/199203').reply(200, invalidArticle);
     get(199203).catch((error) => {
       expect(error).toEqual('backend_error');
+      done();
     });
-
-    invalidArticle = { ...mockArticle };
+  });
+  test('should throw error when the catalogue endpoint does not return valid data - missing price in amount', (done) => {
+    const invalidArticle = { ...mockArticle };
     delete invalidArticle['price']['amount'];
     mock.onGet('/article/199203').reply(200, invalidArticle);
     get(199203).catch((error) => {

@@ -28,4 +28,7 @@ This is a running document that captures design decisions, assumptions, limitati
    
 ## Day 3: API communication (continued)
    * The get part of cart is completed. No surprises yet.
+   * The put part of cart is also added. The test scenarios cover almost all the bad data part.
+   * Why tests?
+     I believe bad tests are worse than no tests. Tests are supposed to provide the safety net while refactoring or developing new features. If there are holes in this, it might lead to more disastrous state. 
    
