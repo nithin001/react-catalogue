@@ -1,7 +1,7 @@
 import Immutable from 'immutable';
 import catalog from '../../src/reducers/catalog';
 
-describe('article reducer', () => {
+describe('catalog reducer', () => {
   var mockArticle = {
     'sku': '199203',
     'name': 'IPad',

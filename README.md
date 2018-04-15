@@ -32,6 +32,7 @@ This is a running document that captures design decisions, assumptions, limitati
    * Why tests?
      I believe bad tests are worse than no tests. Tests are supposed to provide the safety net while refactoring or developing new features. If there are holes in this, it might lead to more disastrous state.
      
- # Enter redux!     
+## Enter redux!     
    * I just love writing reducers. The most predictable part of the code. It's very simple to write tests for reducers as a reducer function should be a pure function with no side effects. Completed cart reducer. It supports three actions currently.
    * I am using Immutable JS for the data elements. It just makes everything simple and reduces the need of React's life cycle methods.
+   * All the reducers are complete. I think they should be enough for all the business cases stated. If needed, we can more later.
