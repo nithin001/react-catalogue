@@ -36,3 +36,8 @@ This is a running document that captures design decisions, assumptions, limitati
    * I just love writing reducers. The most predictable part of the code. It's very simple to write tests for reducers as a reducer function should be a pure function with no side effects. Completed cart reducer. It supports three actions currently.
    * I am using Immutable JS for the data elements. It just makes everything simple and reduces the need of React's life cycle methods.
    * All the reducers are complete. I think they should be enough for all the business cases stated. If needed, we can more later.
+   
+## World of actions
+   * Just wrote the first action file. Some considerations:
+     * I am using separate dispatch for ui actions. Seems redundant but looks specific.
+     * Started using sinon for stubing and spying. We need not worry about the api layer anymore.

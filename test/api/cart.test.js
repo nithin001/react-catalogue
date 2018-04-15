@@ -13,7 +13,7 @@ describe('cart api get', () => {
   var mockResponse = { lines: [mockOrder] };
   it('should create an api get request to cart endpoint', (done) => {
     mock.onGet('/cart').reply(200, mockResponse);
-    get().then((response) => {
+    return get().then((response) => {
       expect(response).toEqual(mockResponse);
       done();
     });
@@ -21,7 +21,7 @@ describe('cart api get', () => {
 
   it('should throw error when the backend fails', (done) => {
     mock.onGet('/cart').reply(500);
-    get().catch((error) => {
+    return get().catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -29,7 +29,7 @@ describe('cart api get', () => {
 
   it('should throw error when the network times out', (done) => {
     mock.onGet('/cart').timeout();
-    get().catch((error) => {
+    return get().catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -37,20 +37,23 @@ describe('cart api get', () => {
 
   it('should throw error when there is a low level network error', (done) => {
     mock.onGet('/cart').networkError();
-    get().catch((error) => {
+    return get().catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
   });
 
-  it('should throw error when the catalogue endpoint does not return valid data', (done) => {
+  it('should throw error when the catalogue endpoint does not return valid data - empty map', (done) => {
     mock.onGet('/cart').reply(200, {});
-    get().catch((error) => {
+    return get().catch((error) => {
       expect(error).toEqual('backend_error');
+      done();
     });
-    mock.reset();
+  });
+
+  it('should throw error when the catalogue endpoint does not return valid data - empty lines', (done) => {
     mock.onGet('/cart').reply(200, { lines: [{}] });
-    get().catch((error) => {
+    return get().catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -91,7 +94,7 @@ describe('cart api put', () => {
 
   it('should create an api put request to cart endpoint', (done) => {
     mock.onPut('/cart').reply(200, mockResponse);
-    put(request).then((response) => {
+    return put(request).then((response) => {
       expect(response).toEqual(mockResponse);
       done();
     });
@@ -99,7 +102,7 @@ describe('cart api put', () => {
 
   it('should throw error when the backend fails', (done) => {
     mock.onPut('/cart').reply(500);
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -107,7 +110,7 @@ describe('cart api put', () => {
 
   it('should throw error when the network times out', (done) => {
     mock.onPut('/cart').timeout();
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -115,7 +118,7 @@ describe('cart api put', () => {
 
   it('should throw error when there is a low level network error', (done) => {
     mock.onPut('/cart').networkError();
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -123,7 +126,7 @@ describe('cart api put', () => {
 
   it('should throw error when there is a bad request error', (done) => {
     mock.onPut('/cart').reply(400);
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -139,7 +142,7 @@ describe('cart api put', () => {
         'currency': 'EUR'
       }
     });
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -154,7 +157,7 @@ describe('cart api put', () => {
         'currency': 'EUR'
       }
     });
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -169,7 +172,7 @@ describe('cart api put', () => {
         'currency': 'EUR'
       }
     });
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -185,7 +188,7 @@ describe('cart api put', () => {
           'currency': 'EUR'
         }
       });
-      put(request).catch((error) => {
+      return put(request).catch((error) => {
         expect(error).toEqual('backend_error');
         done();
       });
@@ -201,7 +204,7 @@ describe('cart api put', () => {
           'currency': 'EUR'
         }
       });
-      put(request).catch((error) => {
+      return put(request).catch((error) => {
         expect(error).toEqual('backend_error');
         done();
       });
@@ -218,7 +221,7 @@ describe('cart api put', () => {
           'currency': 'EUR'
         }
       });
-      put(request).catch((error) => {
+      return put(request).catch((error) => {
         expect(error).toEqual('backend_error');
         done();
       });
@@ -234,7 +237,7 @@ describe('cart api put', () => {
           'currency': 'EUR'
         }
       });
-      put(request).catch((error) => {
+      return put(request).catch((error) => {
         expect(error).toEqual('backend_error');
         done();
       });
@@ -249,7 +252,7 @@ describe('cart api put', () => {
         'currency': 'EUR'
       }
     });
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -264,7 +267,7 @@ describe('cart api put', () => {
         'currency': 'EUR'
       }
     });
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -273,7 +276,7 @@ describe('cart api put', () => {
     mock.onPut('/cart').reply(200, {
       'lines': [mockOrder]
     });
-    put(request).catch((error) => {
+    return put(request).catch((error) => {
       expect(error).toEqual('backend_error');
       done();
     });
@@ -287,7 +290,7 @@ describe('cart api put', () => {
           'amount': 60,
         }
       });
-      put(request).catch((error) => {
+      return put(request).catch((error) => {
         expect(error).toEqual('backend_error');
         done();
       });
@@ -301,7 +304,7 @@ describe('cart api put', () => {
           'currency': 'EUR',
         }
       });
-      put(request).catch((error) => {
+      return put(request).catch((error) => {
         expect(error).toEqual('backend_error');
         done();
       });
