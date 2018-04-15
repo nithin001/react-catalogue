@@ -41,3 +41,5 @@ This is a running document that captures design decisions, assumptions, limitati
    * Just wrote the first action file. Some considerations:
      * I am using separate dispatch for ui actions. Seems redundant but looks specific.
      * Started using sinon for stubing and spying. We need not worry about the api layer anymore.
+   * Completed all the actions. Next stop: Start creating the React Components
+   * BTW, I am done for the day.

@@ -1,7 +1,7 @@
 import instance from './base';
 import Ajv from 'ajv';
 
-const get = (articleId) => {
+export const get = (articleId) => {
   return new Promise((resolve, reject) => {
     instance.get(`/article/${articleId}`)
       .then((response) => {
@@ -25,8 +25,6 @@ const get = (articleId) => {
     ;
   });
 };
-
-export default get;
 
 const schema = {
   '$id': 'http://challenge.monoqi.net/article/{articleId}',

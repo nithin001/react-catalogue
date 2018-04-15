@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
 import base from '../../src/api/base';
-import get from '../../src/api/article';
+import { get } from '../../src/api/article';
 describe('article api', () => {
   var mock = new MockAdapter(base);
   beforeEach(() => {
@@ -90,15 +90,16 @@ describe('article api', () => {
       done();
     });
   });
-  it('should throw error when the catalogue endpoint does not return valid data - missing currency in price', (done) => {
-    const invalidArticle = { ...mockArticle };
-    delete invalidArticle['price']['currency'];
-    mock.onGet('/article/199203').reply(200, invalidArticle);
-    return get(199203).catch((error) => {
-      expect(error).toEqual('backend_error');
-      done();
+  it('should throw error when the catalogue endpoint does not return valid data - missing currency in price',
+    (done) => {
+      const invalidArticle = { ...mockArticle };
+      delete invalidArticle['price']['currency'];
+      mock.onGet('/article/199203').reply(200, invalidArticle);
+      return get(199203).catch((error) => {
+        expect(error).toEqual('backend_error');
+        done();
+      });
     });
-  });
   it('should throw error when the catalogue endpoint does not return valid data - missing price in amount', (done) => {
     const invalidArticle = { ...mockArticle };
     delete invalidArticle['price']['amount'];
