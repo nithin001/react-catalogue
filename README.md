@@ -26,3 +26,6 @@ This is a running document that captures design decisions, assumptions, limitati
    * I will handle the slow network issue at redux level
    * Completed communication part for article endoint. I was able to reuse some of the code from the catalog endpoint.
    
+## Day 3: API communication (continued)
+   * The get part of cart is completed. No surprises yet.
+   
