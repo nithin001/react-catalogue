@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article component should render the article item with name, image, description, price 1`] = `
+<div
+  className="article"
+>
+  <span
+    className="name"
+  >
+    IPad
+  </span>
+  <span
+    className="description"
+  >
+    test
+  </span>
+  <img
+    className="image"
+    src="https://picsum.photos/480/480/?image=6"
+  />
+  <span
+    className="price-amount"
+  >
+    229
+  </span>
+  <span
+    className="price-currency"
+  >
+    EUR
+  </span>
+  <button
+    className="add-to-cart"
+    onClick={[Function]}
+  >
+    Add to cart
+  </button>
+</div>
+`;

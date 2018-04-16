@@ -68,5 +68,8 @@ This is a running document that captures design decisions, assumptions, limitati
    ~~~~
    * I took a shot at building the Header Component. Used a mix of shallow testing and react-test-renderer.
    * [Assumption] The total number of items in the cart is the distinct SKUs present in the cart. This can be easily changed to include the count of each item also.
+   * The skeleton of all the components are completed. Parts that are missing:
+     * Calling the APIs
+     * Tie all the pieces together
    
    
