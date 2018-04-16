@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartTeaser component should render the CartTeaser component with count and amount 1`] = `
+<div
+  className="cart-teaser"
+>
+  <div>
+    <span
+      className="count"
+    >
+      5
+    </span>
+    <span
+      className="amount"
+    >
+      60
+    </span>
+    <span
+      className="currency"
+    >
+      EUR
+    </span>
+  </div>
+</div>
+`;
+
+exports[`CartTeaser component should render the CartTeaser component with error text 1`] = `
+<div
+  className="cart-teaser"
+>
+  <span>
+    Error loading cart
+  </span>
+</div>
+`;
+
+exports[`CartTeaser component should render the CartTeaser component with loading text 1`] = `
+<div
+  className="cart-teaser"
+>
+  <span>
+    Loading
+  </span>
+</div>
+`;

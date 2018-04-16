@@ -43,3 +43,30 @@ This is a running document that captures design decisions, assumptions, limitati
      * Started using sinon for stubing and spying. We need not worry about the api layer anymore.
    * Completed all the actions. Next stop: Start creating the React Components
    * BTW, I am done for the day.
+   
+## Components, Components, Components
+   * Below is the structure of components I've decided to go with:
+   ~~~~
+    App
+     Header
+       Title
+       CartTeaser
+     Body
+       QuoteView
+         Cart
+           CartItem
+             QuantityBar
+         Quote
+           QouteItem
+           Total
+       CatalogView
+         Catalog
+           CatalogItem
+       ArticleView
+         Article
+     Footer
+   ~~~~
+   * I took a shot at building the Header Component. Used a mix of shallow testing and react-test-renderer.
+   * [Assumption] The total number of items in the cart is the distinct SKUs present in the cart. This can be easily changed to include the count of each item also.
+   
+   
