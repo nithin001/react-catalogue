@@ -12,3 +12,6 @@ export const load = () => {
       });
   };
 };
+
+export const addToCart = (sku) => ({ type: 'ADD_TO_CART', payload: sku });
+export const removeFromCart = (sku) => ({ type: 'REMOVE_FROM_CART', payload: sku });

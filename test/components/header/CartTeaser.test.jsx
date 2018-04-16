@@ -1,9 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Immutable from 'immutable';
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import { CartTeaser, mapStateToProps } from '../../../src/components/header/CartTeaser';
 import cart from '../../../src/reducers/cart';
 import quote from '../../../src/reducers/quote';
+configure({ adapter: new Adapter() });
+
 describe('CartTeaser component', () => {
   it('should render the CartTeaser component with loading text', () => {
     const props = { loading: true, error: false };
@@ -28,8 +32,8 @@ describe('CartTeaser component', () => {
     />);
     expect(title).toMatchSnapshot();
   });
-
 });
+
 describe('Connected CartTeaser component', () => {
 
   it('should map state values to props of the component', () => {

@@ -1,9 +1,10 @@
 import React from 'react';
 import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import Header from '../../../src/components/header';
 import Title from '../../../src/components/header/Title';
 import CartTeaser from '../../../src/components/header/CartTeaser';
-import Adapter from 'enzyme-adapter-react-16';
+
 
 configure({ adapter: new Adapter() });
 

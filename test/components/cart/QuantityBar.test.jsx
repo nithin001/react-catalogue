@@ -9,7 +9,7 @@ describe('QuantityBar component', () => {
   it('should render the QuantityBar component with current count and two buttons', () => {
     const addToCart = jest.fn();
     const removeFromCart = jest.fn();
-    const props = { id: '199203', quantity: 1, addToCart, removeFromCart };
+    const props = { sku: '199203', quantity: 1, addToCart, removeFromCart };
     const quantityBar = renderer.create(<QuantityBar
       {...props}
     />);
@@ -19,7 +19,7 @@ describe('QuantityBar component', () => {
   it('should call add to cart function on click of add to cart', () => {
     const addToCart = jest.fn();
     const removeFromCart = jest.fn();
-    const props = { id: '199203', quantity: 1, addToCart, removeFromCart };
+    const props = { sku: '199203', quantity: 1, addToCart, removeFromCart };
     const quantityBar = shallow(<QuantityBar
       {...props}
     />);
@@ -31,7 +31,7 @@ describe('QuantityBar component', () => {
   it('should call remove from cart function on click of remove from cart', () => {
     const addToCart = jest.fn();
     const removeFromCart = jest.fn();
-    const props = { id: '199203', quantity: 1, addToCart, removeFromCart };
+    const props = { sku: '199203', quantity: 1, addToCart, removeFromCart };
     const quantityBar = shallow(<QuantityBar
       {...props}
     />);

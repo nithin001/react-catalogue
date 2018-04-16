@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import sinon from 'sinon';
-import { load } from '../../src/actions/cart';
+import { addToCart, load, removeFromCart } from '../../src/actions/cart';
 import * as api from '../../src/api/cart';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -52,5 +52,19 @@ describe('cart actions', () => {
         stub.restore();
         done();
       });
+  });
+
+  it('should fire ADD_TO_CART action when addToCart is called', () => {
+    const store = mockStore({});
+    store.dispatch(addToCart('12345'));
+    expect(store.getActions()[0].type).toEqual('ADD_TO_CART');
+    expect(store.getActions()[0].payload).toEqual('12345');
+  });
+
+  it('should fire REMOVE_FROM_CART action when removeFromCart is called', () => {
+    const store = mockStore({});
+    store.dispatch(removeFromCart('12345'));
+    expect(store.getActions()[0].type).toEqual('REMOVE_FROM_CART');
+    expect(store.getActions()[0].payload).toEqual('12345');
   });
 });

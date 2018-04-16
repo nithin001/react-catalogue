@@ -1,8 +1,8 @@
 import React from 'react';
-export const QuantityBar = ({ id, quantity, addToCart, removeFromCart }) => {
+export const QuantityBar = ({ sku, quantity, addToCart, removeFromCart }) => {
   return <div className={'quantity-bar'}>
-    <button className={'add-to-cart'} onClick={() => {addToCart(id);}}>Add to cart</button>
+    <button className={'add-to-cart'} onClick={() => {addToCart(sku);}}>Add to cart</button>
     <span className={'quantity'}>{quantity}</span>
-    <button className={'remove-from-cart'} onClick={() => {removeFromCart(id);}}>Remove from cart</button>
+    <button className={'remove-from-cart'} onClick={() => {removeFromCart(sku);}}>Remove from cart</button>
   </div>;
 };
