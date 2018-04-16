@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { QuantityBar } from './QuantityBar';
 import { addToCart, removeFromCart } from '../../actions/cart';
-export const CartItem = ({ loading, sku, price, name, quantity, addToCart, removeFromCart }) => {
+export const CartItem = ({ sku, price, name, quantity, addToCart, removeFromCart }) => {
   return <div className={'cart-item'}>
     <span className={'name'}>{name}</span>
     <span className={'price-amount'}>{price.amount}</span>
@@ -22,8 +22,7 @@ export const mapStateToProps = (state, ownProps) => {
   return { price, name: article.get('name') };
 };
 
-export const mapDispatchToProp = (dispatch) => (
-  {
+export const mapDispatchToProp = (dispatch) => ({
     addToCart: (sku) => dispatch(addToCart(sku)),
     removeFromCart: (sku) => dispatch(removeFromCart(sku)),
   }

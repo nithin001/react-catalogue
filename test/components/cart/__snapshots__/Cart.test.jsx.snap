@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart component should render the list of CartItem components 1`] = `
+<div
+  className="cart"
+>
+  <Connect(CartItem)
+    key="199203"
+    quantity={3}
+    sku="199203"
+  />
+  <Connect(CartItem)
+    key="199204"
+    quantity={5}
+    sku="199204"
+  />
+</div>
+`;
