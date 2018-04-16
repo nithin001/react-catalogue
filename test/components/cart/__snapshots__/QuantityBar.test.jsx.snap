@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuantityBar component should render the QuantityBar component with current count and two buttons 1`] = `
+<div
+  className="quantity-bar"
+>
+  <button
+    className="add-to-cart"
+    onClick={[Function]}
+  >
+    Add to cart
+  </button>
+  <span
+    className="quantity"
+  >
+    1
+  </span>
+  <button
+    className="remove-from-cart"
+    onClick={[Function]}
+  >
+    Remove from cart
+  </button>
+</div>
+`;
