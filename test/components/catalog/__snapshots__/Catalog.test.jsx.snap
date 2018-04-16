@@ -7,29 +7,62 @@ exports[`Catalog component should render the list of CatalogItems 1`] = `
   <div
     className="catalog-item"
   >
-    <span
-      className="name"
-    >
-      IPad
-    </span>
-    <img
-      className="image"
-      src="https://picsum.photos/480/480/?image=6"
-    />
-    <span
-      className="price-amount"
-    >
-      229
-    </span>
-    <span
-      className="price-currency"
-    >
-      EUR
-    </span>
-    <button
+    <a
+      href="/articles/199203"
       onClick={[Function]}
     >
-      Add to cart
+      <img
+        className="catalog-item__image"
+        src="https://picsum.photos/480/480/?image=6"
+      />
+    </a>
+    <span
+      className="catalog-item__name"
+    >
+      <span
+        className="catalog-item__name catalog-item__name--legend"
+      >
+        Name: 
+      </span>
+      <span
+        className="catalog-item__name catalog-item__name--value"
+      >
+        IPad
+      </span>
+    </span>
+    <br />
+    <span
+      className="catalog-item__price catalog-item__price--legend"
+    >
+      Price:  
+      <span
+        className="catalog-item__price catalog-item__price--amount"
+      >
+        229
+      </span>
+       
+      <span
+        className="catalog-item__price catalog-item__price--currency"
+      >
+        EUR
+      </span>
+    </span>
+    <br />
+    <a
+      href="/articles/199203"
+      onClick={[Function]}
+    >
+      <button
+        className="button button--details"
+      >
+        View
+      </button>
+    </a>
+    <button
+      className="button button--add-to-cart"
+      onClick={[Function]}
+    >
+      Add
     </button>
   </div>
 </div>

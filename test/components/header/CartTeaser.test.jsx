@@ -1,8 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Immutable from 'immutable';
-import { configure, shallow } from 'enzyme';
+import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { MemoryRouter } from 'react-router';
 import { CartTeaser, mapStateToProps } from '../../../src/components/header/CartTeaser';
 import cart from '../../../src/reducers/cart';
 import quote from '../../../src/reducers/quote';
@@ -27,9 +28,10 @@ describe('CartTeaser component', () => {
 
   it('should render the CartTeaser component with count and amount', () => {
     const props = { loading: false, error: false, count: 5, amount: 60, currency: 'EUR' };
-    const title = renderer.create(<CartTeaser
-      {...props}
-    />);
+    const title = renderer.create(<MemoryRouter>
+      <CartTeaser
+        {...props}
+      /></MemoryRouter>);
     expect(title).toMatchSnapshot();
   });
 });

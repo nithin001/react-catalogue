@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import { configure, shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
+import { MemoryRouter } from 'react-router';
 import { CatalogItem } from '../../../src/components/catalog/CatalogItem';
 import catalog from '../../../src/reducers/catalog';
 configure({ adapter: new Adapter() });
@@ -20,9 +21,9 @@ describe('CatalogItem component', () => {
   it('should render the item with name, image, price add to cart button', () => {
     const addToCart = jest.fn();
     const props = { item: catalogState.get(0), addToCart };
-    const catalogItem = renderer.create(<CatalogItem
+    const catalogItem = renderer.create(<MemoryRouter><CatalogItem
       {...props}
-    />);
+    /></MemoryRouter>);
     expect(catalogItem).toMatchSnapshot();
   });
 
@@ -32,7 +33,7 @@ describe('CatalogItem component', () => {
     const catalogItem = shallow(<CatalogItem
       {...props}
     />);
-    catalogItem.find('button').at(0).simulate('click');
+    catalogItem.find('button').at(1).simulate('click');
     expect(addToCart.mock.calls.length).toBe(1);
     expect(addToCart.mock.calls[0][0]).toEqual('199203');
   });

@@ -8,18 +8,37 @@ exports[`CartTeaser component should render the CartTeaser component with count 
     <span
       className="count"
     >
+      Items: 
       5
     </span>
     <span
-      className="amount"
+      className="total"
     >
-      60
+      Total: 
+      <span
+        className="total__amount"
+      >
+        60
+      </span>
+       
+      <span
+        className="total__currency"
+      >
+        EUR
+      </span>
     </span>
-    <span
-      className="currency"
+    <br />
+    <a
+      className="checkout"
+      href="/cart"
+      onClick={[Function]}
     >
-      EUR
-    </span>
+      <button
+        className="button button--checkout"
+      >
+        Checkout
+      </button>
+    </a>
   </div>
 </div>
 `;

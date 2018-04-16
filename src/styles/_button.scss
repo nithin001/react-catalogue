@@ -1,0 +1,29 @@
+.button {
+  position: relative;
+  vertical-align: top;
+  width: 50%;
+  height: 30px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  &--add-to-cart, &--checkout {
+    background: white;
+    color: black;
+    border: 1px SOLID BLACK;
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+  &--details {
+    background: #333;
+    border: 1px SOLID BLACK;
+    color: white;
+    &:hover {
+      background: #000;
+    }
+  }
+
+}

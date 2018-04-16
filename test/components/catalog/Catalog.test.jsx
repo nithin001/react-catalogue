@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import { configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
+import { MemoryRouter } from 'react-router';
 import { Catalog, mapStateToProps } from '../../../src/components/catalog';
 import catalog from '../../../src/reducers/catalog';
 configure({ adapter: new Adapter() });
@@ -21,9 +22,9 @@ describe('Catalog component', () => {
   it('should render the list of CatalogItems', () => {
     const addToCart = jest.fn();
     const props = { catalog: catalogState, addToCart };
-    const catalogItems = renderer.create(<Catalog
+    const catalogItems = renderer.create(<MemoryRouter><Catalog
       {...props}
-    />);
+    /></MemoryRouter>);
     expect(catalogItems).toMatchSnapshot();
   });
 });

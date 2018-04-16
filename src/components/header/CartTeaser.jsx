@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 export const CartTeaser = ({ loading, error, count, amount, currency }) => {
   let text = '';
@@ -8,9 +9,18 @@ export const CartTeaser = ({ loading, error, count, amount, currency }) => {
     text = <span>Error loading cart</span>;
   } else {
     text = <div>
-      <span className={'count'}>{count}</span>
-      <span className={'amount'}>{amount}</span>
-      <span className={'currency'}>{currency}</span>
+      <span className={'count'}>Items: {count}</span>
+      <span className={'total'}>
+        Total:&nbsp;
+        <span className={'total__amount'}>{amount}</span>
+        &nbsp;
+        <span className={'total__currency'}>{currency}</span>
+      </span>
+      <br/>
+      <Link className={'checkout'} to={'/cart'}>
+        <button className={'button button--checkout'}>Checkout
+        </button>
+      </Link>
     </div>;
   }
   return <div className={'cart-teaser'}>{text}</div>;

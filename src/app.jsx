@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './app.scss';
+import './style.scss';
 import { HashRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
 import { applyMiddleware, compose, createStore } from 'redux';
@@ -24,7 +24,7 @@ const App = <Provider store={store}>
       <Header/>
       <Switch>
         <Route exact path="/" component={CatalogView}/>
-        <Route path="/article/:articleId" component={ArticleView}/>
+        <Route path="/articles/:articleId" component={ArticleView}/>
         <Route path="/cart" component={CartView}/>
       </Switch>
     </div>
