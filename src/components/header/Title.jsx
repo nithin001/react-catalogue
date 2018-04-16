@@ -1,6 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Title = props => (
-  <h3>Acme Tech Shop</h3>);
+  <Link to="/">Acme Tech Shop</Link>);
 
 export default Title;

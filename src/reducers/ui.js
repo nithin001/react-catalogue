@@ -3,6 +3,7 @@ const defaultState = Immutable.Map()
   .set('catalog_loading', false)
   .set('article_loading', false)
   .set('quote_loading', false)
+  .set('cart_loaded_from_server', false)
   .set('cart_loading', false)
   .set('error', false);
 const ui = (state = defaultState, action) => {
@@ -23,7 +24,7 @@ const ui = (state = defaultState, action) => {
       return state.set('cart_loading', true).set('error', false);
     }
     case 'LOAD_CART_COMPLETE': {
-      return state.set('cart_loading', false);
+      return state.set('cart_loading', false).set('cart_loaded_from_server', true);
     }
     case 'LOAD_QUOTE_START': {
       return state.set('quote_loading', true).set('error', false);

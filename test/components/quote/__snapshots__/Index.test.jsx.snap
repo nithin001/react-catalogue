@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`QuoteItem component should render the quote item with name, price, quantity and line total 1`] = `
+exports[`Quote component should render the quote items 1`] = `
 <div
   className="quote"
 >

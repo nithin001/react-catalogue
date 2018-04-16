@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import quote from '../../../src/reducers/quote';
-import { Quote } from '../../../src/components/quote';
+import { mapStateToProps, Quote } from '../../../src/components/quote';
 var mockQuote = {
   'lines': [{
     'sku': '374847',
@@ -22,8 +22,8 @@ var mockQuote = {
   }
 };
 const quoteState = quote(undefined, { type: 'POPULATE_QUOTE', payload: mockQuote });
-describe('QuoteItem component', () => {
-  it('should render the quote item with name, price, quantity and line total', () => {
+describe('Quote component', () => {
+  it('should render the quote items', () => {
     const props = {
       quote: quoteState
     };
@@ -31,5 +31,15 @@ describe('QuoteItem component', () => {
       {...props}
     />);
     expect(quote).toMatchSnapshot();
+  });
+});
+
+describe('Connected Catalog component', () => {
+  it('should map state values to props of the component', () => {
+    const state = {
+      quote: quoteState,
+    };
+    const result = mapStateToProps(state);
+    expect(result).toEqual({ quote: quoteState });
   });
 });

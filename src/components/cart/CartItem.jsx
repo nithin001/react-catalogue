@@ -28,4 +28,4 @@ export const mapDispatchToProp = (dispatch) => ({
   }
 );
 
-export default connect(mapStateToProps, null)(CartItem);
+export default connect(mapStateToProps, mapDispatchToProp)(CartItem);

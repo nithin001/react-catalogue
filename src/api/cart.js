@@ -25,9 +25,9 @@ export const get = () => {
   });
 };
 
-export const put = (request) => {
+export const put = (cart) => {
   return new Promise((resolve, reject) => {
-    instance.put('/cart', { data: request })
+    instance.put('/cart', { lines: cart })
       .then((response) => {
         if (response.data === undefined) {
           reject('backend_error');
@@ -73,7 +73,7 @@ const get_schema = {
           },
           'quantity': {
             '$id': '/properties/lines/items/properties/quantity',
-            'type': 'integer',
+            'type': 'number',
             'title': 'The Quantity Schema ',
             'default': 0,
             'examples': [
@@ -125,7 +125,7 @@ const put_schema = {
             'properties': {
               'amount': {
                 '$id': '/properties/lines/items/properties/price/properties/amount',
-                'type': 'integer',
+                'type': 'number',
                 'title': 'The Amount Schema ',
                 'default': 0,
                 'examples': [
@@ -149,7 +149,7 @@ const put_schema = {
           },
           'quantity': {
             '$id': '/properties/lines/items/properties/quantity',
-            'type': 'integer',
+            'type': 'number',
             'title': 'The Quantity Schema ',
             'default': 0,
             'examples': [
@@ -162,7 +162,7 @@ const put_schema = {
             'properties': {
               'amount': {
                 '$id': '/properties/lines/items/properties/lineTotal/properties/amount',
-                'type': 'integer',
+                'type': 'number',
                 'title': 'The Amount Schema ',
                 'default': 0,
                 'examples': [
@@ -200,7 +200,7 @@ const put_schema = {
       'properties': {
         'amount': {
           '$id': '/properties/total/properties/amount',
-          'type': 'integer',
+          'type': 'number',
           'title': 'The Amount Schema ',
           'default': 0,
           'examples': [

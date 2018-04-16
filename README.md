@@ -71,5 +71,11 @@ This is a running document that captures design decisions, assumptions, limitati
    * The skeleton of all the components are completed. Parts that are missing:
      * Calling the APIs
      * Tie all the pieces together
+     
+## Tying everything together
+   * This is a part of commit "tying everything together" and I didn't write tests for this part.
+   * It got really messing in between. The untested parts of connected components were not glued together correctly in many places
+   * Overall there are a lot of pieces in this commit that should be added to tech debt.
+   * And if you rebase to this version, you should see a text based version of the app.
    
    

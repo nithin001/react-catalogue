@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`title component should render the title component 1`] = `
-<h3>
+<a
+  href="/"
+  onClick={[Function]}
+>
   Acme Tech Shop
-</h3>
+</a>
 `;

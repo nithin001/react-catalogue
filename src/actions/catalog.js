@@ -7,7 +7,7 @@ export const load = () => {
         dispatch({ type: 'POPULATE_CATALOG', payload: catalog });
         dispatch({ type: 'LOAD_CATALOG_COMPLETE' });
       })
-      .catch(() => {
+      .catch((error) => {
         dispatch({ type: 'LOAD_ERROR' });
       });
   };

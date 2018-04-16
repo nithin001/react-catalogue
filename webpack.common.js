@@ -1,32 +1,32 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  context: path.resolve(__dirname, "src"),
+  context: path.resolve(__dirname, 'src'),
   entry: {
-    app: "./app.jsx",
+    app: './app.jsx',
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "./assets/js/[name].bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: './assets/js/[name].bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Acme tech shop",
-      template: "index.html",
+      title: 'Acme tech shop',
+      template: 'index.html',
     }),
   ],
   module: {
     rules: [
       {
-        test: /\.js|\.jsx$/,
+        test: /\.(js|jsx)$/,
         include: /src/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["env", "react"],
+            presets: ['env', 'react'],
           },
         },
       },
@@ -34,16 +34,19 @@ const config = {
         test: /\.(scss|css)$/,
         use: [
           {
-            loader: "style-loader",
+            loader: 'style-loader',
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
           }],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };
 

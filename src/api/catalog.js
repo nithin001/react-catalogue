@@ -65,7 +65,7 @@ const schema = {
             'properties': {
               'amount': {
                 '$id': '/properties/articles/items/properties/price/properties/amount',
-                'type': 'integer',
+                'type': 'number',
                 'title': 'The Amount Schema ',
                 'default': 0,
               },

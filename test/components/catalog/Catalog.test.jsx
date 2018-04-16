@@ -20,7 +20,7 @@ const catalogState = catalog(undefined, { type: 'POPULATE_CATALOG', payload: moc
 describe('Catalog component', () => {
   it('should render the list of CatalogItems', () => {
     const addToCart = jest.fn();
-    const props = { items: catalogState, addToCart };
+    const props = { catalog: catalogState, addToCart };
     const catalogItems = renderer.create(<Catalog
       {...props}
     />);

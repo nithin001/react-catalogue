@@ -5,10 +5,11 @@ describe('ui reducer', () => {
   it('should return map with default state values when state is undefined', () => {
     const result = ui(undefined, 'SOME_RANDOM_ACTION');
     expect(Immutable.Map.isMap(result)).toEqual(true);
-    expect(result.size).toEqual(5);
+    expect(result.size).toEqual(6);
     expect(result.get('catalog_loading')).toEqual(false);
     expect(result.get('article_loading')).toEqual(false);
     expect(result.get('cart_loading')).toEqual(false);
+    expect(result.get('cart_loaded_from_server')).toEqual(false);
     expect(result.get('quote_loading')).toEqual(false);
     expect(result.get('error')).toEqual(false);
   });
@@ -51,6 +52,7 @@ describe('ui reducer', () => {
   it('should return cart loading as false when LOAD_CART_COMPLETE is called', () => {
     const result = ui(Immutable.Map().set('cart_loading', true), { type: 'LOAD_CART_COMPLETE' });
     expect(result.get('cart_loading')).toBe(false);
+    expect(result.get('cart_loaded_from_server')).toBe(true);
   });
 
   it('should return quote loading as true when LOAD_QUOTE_START is called', () => {

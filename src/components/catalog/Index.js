@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { CatalogItem } from './CatalogItem';
-export const Catalog = ({ items, addToCart }) => {
+import { addToCart } from '../../actions/cart';
+export const Catalog = ({ catalog, addToCart }) => {
   const articles = [];
-  items.keySeq().forEach((item) => {
-    articles.push(items.get(item));
+  catalog.keySeq().forEach((item) => {
+    articles.push(catalog.get(item));
   });
   const articlesList = articles.map(item => {
     return (<CatalogItem key={item.get('sku')} item={item} addToCart={addToCart}/>);

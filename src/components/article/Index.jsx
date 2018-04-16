@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../../actions/cart';
 
-export const Article = ({ article }) => {
+export const Article = ({ article, addToCart }) => {
   return <div className={'article'}>
     <span className={'name'}>{article.get('name')}</span>
     <span className={'description'}>{article.get('description')}</span>
@@ -25,4 +25,4 @@ export const mapDispatchToProp = (dispatch) => ({
   }
 );
 
-export default connect(mapStateToProps, null)(Article);
+export default connect(mapStateToProps, mapDispatchToProp)(Article);
