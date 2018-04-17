@@ -34,7 +34,7 @@ exports[`CartTeaser component should render the CartTeaser component with count 
       onClick={[Function]}
     >
       <button
-        className="button button--checkout"
+        className="button button--inverted"
       >
         Checkout
       </button>

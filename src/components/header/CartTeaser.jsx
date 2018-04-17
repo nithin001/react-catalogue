@@ -18,7 +18,7 @@ export const CartTeaser = ({ loading, error, count, amount, currency }) => {
       </span>
       <br/>
       <Link className={'checkout'} to={'/cart'}>
-        <button className={'button button--checkout'}>Checkout
+        <button className={'button button--inverted'}>Checkout
         </button>
       </Link>
     </div>;

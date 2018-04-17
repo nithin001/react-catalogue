@@ -1,5 +1,6 @@
 import React from 'react';
 import { configure, shallow } from 'enzyme';
+import Immutable from 'immutable';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 import { Cart, mapStateToProps } from '../../../src/components/cart/Index';
@@ -19,6 +20,25 @@ describe('Cart component', () => {
   it('should render the list of CartItem components', () => {
     const props = { cart: cartState };
     const cartObj = shallow(<Cart
+      loading={false}
+      {...props}
+    />);
+    expect(shallowToJson(cartObj)).toMatchSnapshot();
+  });
+
+  it('should render loading if loading', () => {
+    const props = { cart: cartState };
+    const cartObj = shallow(<Cart
+      loading={true}
+      {...props}
+    />);
+    expect(shallowToJson(cartObj)).toMatchSnapshot();
+  });
+
+  it('should render empty cart', () => {
+    const props = { cart: Immutable.Map() };
+    const cartObj = shallow(<Cart
+      loading={false}
       {...props}
     />);
     expect(shallowToJson(cartObj)).toMatchSnapshot();

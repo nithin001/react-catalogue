@@ -28,6 +28,18 @@ describe('Quote component', () => {
       quote: quoteState
     };
     const quote = renderer.create(<Quote
+      loading={false}
+      {...props}
+    />);
+    expect(quote).toMatchSnapshot();
+  });
+
+  it('should render loading if quote is loading', () => {
+    const props = {
+      quote: quoteState
+    };
+    const quote = renderer.create(<Quote
+      loading={true}
       {...props}
     />);
     expect(quote).toMatchSnapshot();

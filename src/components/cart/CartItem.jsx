@@ -4,9 +4,16 @@ import { QuantityBar } from './QuantityBar';
 import { addToCart, removeFromCart } from '../../actions/cart';
 export const CartItem = ({ sku, price, name, quantity, addToCart, removeFromCart }) => {
   return <div className={'cart-item'}>
-    <span className={'name'}>{name}</span>
-    <span className={'price-amount'}>{price.amount}</span>
-    <span className={'price-currency'}>{price.currency}</span>
+    <span className={'cart-item__name'}>
+      <span className={'cart-item__name cart-item__name--legend'}>Name:&nbsp;</span>
+      <span className={'cart-item__name cart-item__name--value'}>{name}</span>
+    </span>
+    <br/>
+    <span className={'cart-item__price cart-item__price--legend'}>Price: &nbsp;
+      <span className={'cart-item__price cart-item__price--amount'}>{price.amount}</span>
+      &nbsp;
+      <span className={'cart-item__price cart-item__price--currency'}>{price.currency}</span>
+    </span>
     <QuantityBar sku={sku} quantity={quantity} addToCart={addToCart} removeFromCart={removeFromCart}/>
   </div>;
 };

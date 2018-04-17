@@ -29,9 +29,13 @@ exports[`CatalogItem component should render the item with name, image, price ad
   </span>
   <br />
   <span
-    className="catalog-item__price catalog-item__price--legend"
+    className="catalog-item__price"
   >
-    Price:  
+    <span
+      className="catalog-item__price catalog-item__price--legend"
+    >
+      Price:  
+    </span>
     <span
       className="catalog-item__price catalog-item__price--amount"
     >
@@ -50,13 +54,13 @@ exports[`CatalogItem component should render the item with name, image, price ad
     onClick={[Function]}
   >
     <button
-      className="button button--details"
+      className="button"
     >
       View
     </button>
   </a>
   <button
-    className="button button--add-to-cart"
+    className="button button--inverted"
     onClick={[Function]}
   >
     Add

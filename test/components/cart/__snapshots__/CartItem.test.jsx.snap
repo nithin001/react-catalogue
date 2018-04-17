@@ -5,19 +5,35 @@ exports[`CartItem component should render the CartItem with a QuantityBar compon
   className="cart-item"
 >
   <span
-    className="name"
+    className="cart-item__name"
   >
-    Ipad
+    <span
+      className="cart-item__name cart-item__name--legend"
+    >
+      Name: 
+    </span>
+    <span
+      className="cart-item__name cart-item__name--value"
+    >
+      Ipad
+    </span>
   </span>
+  <br />
   <span
-    className="price-amount"
+    className="cart-item__price cart-item__price--legend"
   >
-    229
-  </span>
-  <span
-    className="price-currency"
-  >
-    EUR
+    Price:  
+    <span
+      className="cart-item__price cart-item__price--amount"
+    >
+      229
+    </span>
+     
+    <span
+      className="cart-item__price cart-item__price--currency"
+    >
+      EUR
+    </span>
   </span>
   <QuantityBar
     addToCart={[MockFunction]}

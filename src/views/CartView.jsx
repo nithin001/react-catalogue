@@ -19,13 +19,23 @@ class CartView extends React.Component {
   render () {
 
     if (this.props.error) {
-      return <span>Error loading cart</span>;
+      return <div className={'cart-view'}>
+        <span>Error loading cart</span>
+      </div>;
+    } else if (this.props.catalogLoading) {
+      return <div className={'cart-view'}>
+        <span>Loading catalog</span>
+      </div>;
     }
-    const cart = this.props.cartLoading ? <span>Loading Cart</span> : <Cart/>;
-    const quote = this.props.quoteLoading ? <span>Loading Quote</span> : <Quote/>;
     return (<div className={'cart-view'}>
-      {cart}
-      {quote}
+      <div className={'cart'}>
+        <h3>Cart</h3>
+        <Cart loading={this.props.cartLoading}/>
+      </div>
+      <div className={'quote'}>
+        <h3>Quotation</h3>
+        <Quote loading={this.props.quoteLoading}/>
+      </div>
     </div>);
   }
 }

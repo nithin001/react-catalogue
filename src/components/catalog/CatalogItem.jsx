@@ -10,17 +10,18 @@ export const CatalogItem = ({ item, addToCart }) => (
       <span className={'catalog-item__name catalog-item__name--value'}>{item.get('name')}</span>
     </span>
     <br/>
-    <span className={'catalog-item__price catalog-item__price--legend'}>Price: &nbsp;
+    <span className={'catalog-item__price'}>
+      <span className={'catalog-item__price catalog-item__price--legend'}>Price: &nbsp;</span>
       <span className={'catalog-item__price catalog-item__price--amount'}>{item.getIn(['price', 'amount'])}</span>
       &nbsp;
       <span className={'catalog-item__price catalog-item__price--currency'}>{item.getIn(['price', 'currency'])}</span>
     </span>
     <br/>
     <Link to={`/articles/${item.get('sku')}`}>
-      <button className={'button button--details'}>View
+      <button className={'button'}>View
       </button>
     </Link>
-    <button className={'button button--add-to-cart'}
+    <button className={'button button--inverted'}
             onClick={() => {addToCart(item.get('sku'));}}>Add
     </button>
   </div>);

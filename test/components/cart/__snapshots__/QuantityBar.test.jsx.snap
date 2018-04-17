@@ -4,19 +4,29 @@ exports[`QuantityBar component should render the QuantityBar component with curr
 <div
   className="quantity-bar"
 >
+  <span
+    className="quantity"
+  >
+    <span
+      className="quantity--legend"
+    >
+      Quantity: 
+    </span>
+    <span
+      className="quantity--value"
+    >
+      1
+    </span>
+  </span>
+  <br />
   <button
-    className="add-to-cart"
+    className="button  "
     onClick={[Function]}
   >
     Add to cart
   </button>
-  <span
-    className="quantity"
-  >
-    1
-  </span>
   <button
-    className="remove-from-cart"
+    className="button button--inverted"
     onClick={[Function]}
   >
     Remove from cart

@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Total } from './Total';
 import { QuoteItem } from './QuoteItem';
-export const Quote = ({ quote }) => {
+export const Quote = ({ quote, loading }) => {
+  if (loading) {
+    return <span>Loading Cart</span>;
+  }
   if (quote.get('lines') === undefined || quote.get('lines').size == 0) {
     return <span>Quotation is empty</span>;
   }
@@ -11,8 +14,10 @@ export const Quote = ({ quote }) => {
   });
 
   return (
-    <div className={'quote'}>
-      {quoteItems}
+    <div>
+      <div className={'quote-items'}>
+        {quoteItems}
+      </div>
       <Total total={quote.get('total')}/>
     </div>
   );

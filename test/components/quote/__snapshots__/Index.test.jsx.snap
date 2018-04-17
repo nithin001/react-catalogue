@@ -1,61 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Quote component should render loading if quote is loading 1`] = `
+<span>
+  Loading Cart
+</span>
+`;
+
 exports[`Quote component should render the quote items 1`] = `
-<div
-  className="quote"
->
+<div>
   <div
-    className="quote-item"
+    className="quote-items"
   >
-    <span
-      className="sku"
+    <div
+      className="quote-item"
     >
-      374847
-    </span>
-    <span
-      className="name"
-    >
-      Nice Product
-    </span>
-    <span
-      className="price-amount"
-    >
-      20
-    </span>
-    <span
-      className="price-currency"
-    >
-      EUR
-    </span>
-    <span
-      className="quantity"
-    >
-      3
-    </span>
-    <span
-      className="total-amount"
-    >
-      60
-    </span>
-    <span
-      className="total-currency"
-    >
-      EUR
-    </span>
+      <span
+        className="quote-item__name"
+      >
+        <span
+          className="quote-item__name quote-item__name--legend"
+        >
+          Name: 
+        </span>
+        <span
+          className="quote-item__name quote-item__name--value"
+        >
+          Nice Product
+        </span>
+      </span>
+      <br />
+      <span
+        className="quote-item__price"
+      >
+        <span
+          className="quote-item__name quote-item__name--legend"
+        >
+          Price: 
+        </span>
+        <span
+          className="quote-item__price quote-item__price--amount"
+        >
+          20
+        </span>
+         
+        <span
+          className="quote-item__price quote-item__price--currency"
+        >
+          EUR
+        </span>
+      </span>
+      <br />
+      <span
+        className="quote-item__total-quantity"
+      >
+        <span
+          className="quote-item__quantity"
+        >
+          <span
+            className="quote-item__quantity quote-item__quantity--legend"
+          >
+            Quantity: 
+          </span>
+          <span
+            className="quote-item__quantity quote-item__quantity--value"
+          >
+            3
+          </span>
+        </span>
+        <span
+          className="quote-item__total"
+        >
+          <span
+            className="quote-item__total quote-item__total--amount"
+          >
+            60
+          </span>
+           
+          <span
+            className="quote-item__total quote-item__total--currency"
+          >
+            EUR
+          </span>
+        </span>
+      </span>
+    </div>
   </div>
-  <div
+  <span
     className="quote-total"
   >
     <span
-      className="amount"
+      className="quote-total__legend"
     >
-      60
+      Total: 
     </span>
     <span
-      className="currency"
+      className="quote-total__value"
     >
-      EUR
+      <span
+        className="quote-total__value quote-total__value--amount"
+      >
+        60
+      </span>
+       
+      <span
+        className="quote-total__value quote-total__value--currency"
+      >
+        EUR
+      </span>
     </span>
-  </div>
+  </span>
 </div>
 `;

@@ -5,39 +5,73 @@ exports[`QuoteItem component should render the quote item with name, price, quan
   className="quote-item"
 >
   <span
-    className="sku"
+    className="quote-item__name"
   >
-    374847
+    <span
+      className="quote-item__name quote-item__name--legend"
+    >
+      Name: 
+    </span>
+    <span
+      className="quote-item__name quote-item__name--value"
+    >
+      Nice Product
+    </span>
   </span>
+  <br />
   <span
-    className="name"
+    className="quote-item__price"
   >
-    Nice Product
+    <span
+      className="quote-item__name quote-item__name--legend"
+    >
+      Price: 
+    </span>
+    <span
+      className="quote-item__price quote-item__price--amount"
+    >
+      20
+    </span>
+     
+    <span
+      className="quote-item__price quote-item__price--currency"
+    >
+      EUR
+    </span>
   </span>
+  <br />
   <span
-    className="price-amount"
+    className="quote-item__total-quantity"
   >
-    20
-  </span>
-  <span
-    className="price-currency"
-  >
-    EUR
-  </span>
-  <span
-    className="quantity"
-  >
-    3
-  </span>
-  <span
-    className="total-amount"
-  >
-    60
-  </span>
-  <span
-    className="total-currency"
-  >
-    EUR
+    <span
+      className="quote-item__quantity"
+    >
+      <span
+        className="quote-item__quantity quote-item__quantity--legend"
+      >
+        Quantity: 
+      </span>
+      <span
+        className="quote-item__quantity quote-item__quantity--value"
+      >
+        3
+      </span>
+    </span>
+    <span
+      className="quote-item__total"
+    >
+      <span
+        className="quote-item__total quote-item__total--amount"
+      >
+        60
+      </span>
+       
+      <span
+        className="quote-item__total quote-item__total--currency"
+      >
+        EUR
+      </span>
+    </span>
   </span>
 </div>
 `;

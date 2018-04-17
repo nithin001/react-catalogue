@@ -1,18 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`QuoteItem component should render the quote item with name, price, quantity and line total 1`] = `
-<div
+<span
   className="quote-total"
 >
   <span
-    className="amount"
+    className="quote-total__legend"
   >
-    60
+    Total: 
   </span>
   <span
-    className="currency"
+    className="quote-total__value"
   >
-    EUR
+    <span
+      className="quote-total__value quote-total__value--amount"
+    >
+      60
+    </span>
+     
+    <span
+      className="quote-total__value quote-total__value--currency"
+    >
+      EUR
+    </span>
   </span>
-</div>
+</span>
 `;
