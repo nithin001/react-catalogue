@@ -2,6 +2,23 @@
 
 This is a running document that captures design decisions, assumptions, limitations of the system. Each git commit will be atomic and looking at the git log should tell the story of this system was developed.
 
+# Features and Functions
+  * The app has all the features and functions asked.
+  * There are about 120 tests. I followed TDD for the most part. Last few commits won't have tests.
+  * The live blogging section below will detail almost every commit. Please read through.
+  * I am archiving the .git folder along with the solution so that you will be able to look through the commit. 
+
+# Local Setup
+  * You need to have yarn installed to use the app. More details on Yarn here: https://yarnpkg.com/
+  * Simply run 'yarn' in the project directory. This should install all the dependencies.
+  * You should be able to start the local server by running the following command: yarn start
+  * You should be able to run tests by running the following command: yarn test
+  * You should be able to build (output should be in dist/index.html) the app by running the following command: yarn build
+  * The app already has a build in **dist/index.html** which you can open in a browser (chrome/firefox) to view the solution.
+  * There is a build without using materialize in without_framework/index.html which also can be opened in a browser.
+    
+ 
+# Live blogging begins here!
 ## Create the scaffolding
 ##### Set up yarn
   * Why Yarn instead of NPM?
@@ -64,10 +81,8 @@ This is a running document that captures design decisions, assumptions, limitati
            CatalogItem
        ArticleView
          Article
-     Footer
    ~~~~
    * I took a shot at building the Header Component. Used a mix of shallow testing and react-test-renderer.
-   * [Assumption] The total number of items in the cart is the distinct SKUs present in the cart. This can be easily changed to include the count of each item also.
    * The skeleton of all the components are completed. Parts that are missing:
      * Calling the APIs
      * Tie all the pieces together
@@ -83,5 +98,15 @@ This is a running document that captures design decisions, assumptions, limitati
    * The pages look simple and neat. I've added a little bit of responsiveness (The checkout part in header, the quotation section in the cart view and the description in the article view will stack one below the other in a smaller view)
    * I've decided to add a ui framework to the app. Please rebase to commit "adding styles to article page" if you want to see how the code looked before adding material ui.
    * You can also open "without_framework/index.html" to see the output.
+   
+## Complete!
+   * If you are reading this, Thank you! This is the last commit for the coding challenge.
+   * I've realised that I have to pick up on UX. Given a wireframe/design I can convert it to a webpage. But coming up with the UX design is something I've always struggled with. 
+   * I threw in a little bit of materialize to jazz up the UI (I feel bad that I could not do this on my own). 
+   * I learnt a few things in this challenge like validating schema and styling.
+   * There are no tests for the last few commits. It would be great if those were there.
+   * I haven't fixed the lint issues.
+   * Looking at the git log should be interesting.
+   * Overall I am satisfied with the output. Thanks again! 
    
    

@@ -1,6 +1,9 @@
 import { put } from '../api/cart';
-export const load = (cart) => {
-  return (dispatch) => {
+
+export const load = cart => (dispatch) => {
+  if (cart.length === 0) {
+    dispatch({ type: 'POPULATE_QUOTE', payload: [] });
+  } else {
     dispatch({ type: 'LOAD_QUOTE_START' });
     return put(cart)
       .then((quote) => {
@@ -10,5 +13,5 @@ export const load = (cart) => {
       .catch(() => {
         dispatch({ type: 'LOAD_ERROR' });
       });
-  };
+  }
 };

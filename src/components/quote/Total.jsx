@@ -1,12 +1,9 @@
 import React from 'react';
 
 export const Total = ({ total }) => (
-  <span className={'quote-total'}>
-    <span className={'quote-total__legend'}>Total:&nbsp;</span>
-    <span className={'quote-total__value'}>
-      <span className={'quote-total__value quote-total__value--amount'}>{total.get('amount')}</span>
-      &nbsp;
-      <span className={'quote-total__value quote-total__value--currency'}>{total.get('currency')}</span>
-    </span>
-  </span>
+  <div style={{ fontSize: '2rem' }}>
+    <span className={'left'}>Total</span>
+    <span className={'right'} style={{ fontStyle: 'italic' }}>{total.get('amount')}&nbsp;{total.get('currency')}</span>
+    <div className="clearfix"></div>
+  </div>
 );

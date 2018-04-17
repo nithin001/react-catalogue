@@ -1,64 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CartTeaser component should render the CartTeaser component with count and amount 1`] = `
-<div
-  className="cart-teaser"
+<ul
+  className="right"
 >
-  <div>
-    <span
-      className="count"
-    >
-      Items: 
-      5
-    </span>
-    <span
-      className="total"
-    >
-      Total: 
-      <span
-        className="total__amount"
-      >
-        60
-      </span>
-       
-      <span
-        className="total__currency"
-      >
-        EUR
-      </span>
-    </span>
-    <br />
+  <li>
     <a
-      className="checkout"
+      className="waves-effect white-text btn-flat"
       href="/cart"
       onClick={[Function]}
     >
-      <button
-        className="button button--inverted"
+      5
+       
+      items
+       that costs 
+      <span
+        className="currency currency--normal"
       >
-        Checkout
-      </button>
+        60
+         
+        EUR
+      </span>
     </a>
-  </div>
-</div>
+  </li>
+</ul>
 `;
 
-exports[`CartTeaser component should render the CartTeaser component with error text 1`] = `
-<div
-  className="cart-teaser"
+exports[`CartTeaser component should render the CartTeaser component with no items in cart text 1`] = `
+<ul
+  className="right"
 >
-  <span>
-    Error loading cart
-  </span>
-</div>
-`;
-
-exports[`CartTeaser component should render the CartTeaser component with loading text 1`] = `
-<div
-  className="cart-teaser"
->
-  <span>
-    Loading
-  </span>
-</div>
+  <li>
+    <a
+      className="waves-effect white-text btn-flat"
+      href="/cart"
+      onClick={[Function]}
+    >
+      No items in cart
+    </a>
+  </li>
+</ul>
 `;

@@ -1,9 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Quote component should render loading if quote is loading 1`] = `
-<span>
-  Loading Cart
-</span>
+<div>
+  <div
+    className="quote-items"
+  >
+    <div
+      class="card blue-grey darken-1"
+    >
+      <div
+        class="card-content white-text"
+      >
+        <div
+          className="quote-item"
+        >
+          <span
+            class="card-title"
+          >
+            Nice Product
+            <br />
+            <span
+              className="left"
+              style={
+                Object {
+                  "fontSize": "small",
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              20
+               
+              EUR
+               X 
+              3
+            </span>
+            <span
+              className="right"
+              style={
+                Object {
+                  "fontSize": "small",
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              60
+               
+              EUR
+            </span>
+          </span>
+          <div
+            className="clearfix"
+          />
+        </div>
+      </div>
+      <div
+        class="card-action white-text"
+      >
+        <div
+          style={
+            Object {
+              "fontSize": "2rem",
+            }
+          }
+        >
+          <span
+            className="left"
+          >
+            Total
+          </span>
+          <span
+            className="right"
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            60
+             
+            EUR
+          </span>
+          <div
+            className="clearfix"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Quote component should render the quote items 1`] = `
@@ -12,102 +96,86 @@ exports[`Quote component should render the quote items 1`] = `
     className="quote-items"
   >
     <div
-      className="quote-item"
+      class="card blue-grey darken-1"
     >
-      <span
-        className="quote-item__name"
+      <div
+        class="card-content white-text"
       >
-        <span
-          className="quote-item__name quote-item__name--legend"
-        >
-          Name: 
-        </span>
-        <span
-          className="quote-item__name quote-item__name--value"
-        >
-          Nice Product
-        </span>
-      </span>
-      <br />
-      <span
-        className="quote-item__price"
-      >
-        <span
-          className="quote-item__name quote-item__name--legend"
-        >
-          Price: 
-        </span>
-        <span
-          className="quote-item__price quote-item__price--amount"
-        >
-          20
-        </span>
-         
-        <span
-          className="quote-item__price quote-item__price--currency"
-        >
-          EUR
-        </span>
-      </span>
-      <br />
-      <span
-        className="quote-item__total-quantity"
-      >
-        <span
-          className="quote-item__quantity"
+        <div
+          className="quote-item"
         >
           <span
-            className="quote-item__quantity quote-item__quantity--legend"
+            class="card-title"
           >
-            Quantity: 
+            Nice Product
+            <br />
+            <span
+              className="left"
+              style={
+                Object {
+                  "fontSize": "small",
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              20
+               
+              EUR
+               X 
+              3
+            </span>
+            <span
+              className="right"
+              style={
+                Object {
+                  "fontSize": "small",
+                  "fontStyle": "italic",
+                }
+              }
+            >
+              60
+               
+              EUR
+            </span>
+          </span>
+          <div
+            className="clearfix"
+          />
+        </div>
+      </div>
+      <div
+        class="card-action white-text"
+      >
+        <div
+          style={
+            Object {
+              "fontSize": "2rem",
+            }
+          }
+        >
+          <span
+            className="left"
+          >
+            Total
           </span>
           <span
-            className="quote-item__quantity quote-item__quantity--value"
-          >
-            3
-          </span>
-        </span>
-        <span
-          className="quote-item__total"
-        >
-          <span
-            className="quote-item__total quote-item__total--amount"
+            className="right"
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
           >
             60
-          </span>
-           
-          <span
-            className="quote-item__total quote-item__total--currency"
-          >
+             
             EUR
           </span>
-        </span>
-      </span>
+          <div
+            className="clearfix"
+          />
+        </div>
+      </div>
     </div>
   </div>
-  <span
-    className="quote-total"
-  >
-    <span
-      className="quote-total__legend"
-    >
-      Total: 
-    </span>
-    <span
-      className="quote-total__value"
-    >
-      <span
-        className="quote-total__value quote-total__value--amount"
-      >
-        60
-      </span>
-       
-      <span
-        className="quote-total__value quote-total__value--currency"
-      >
-        EUR
-      </span>
-    </span>
-  </span>
 </div>
 `;

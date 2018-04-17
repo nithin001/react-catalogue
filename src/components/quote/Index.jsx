@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { Total } from './Total';
 import { QuoteItem } from './QuoteItem';
 export const Quote = ({ quote, loading }) => {
-  if (loading) {
-    return <span>Loading Cart</span>;
-  }
+
   if (quote.get('lines') === undefined || quote.get('lines').size == 0) {
-    return <span>Quotation is empty</span>;
+    return null;
   }
+
   const quoteItems = quote.get('lines').map(quoteItem => {
     return (<QuoteItem key={quoteItem.get('sku')} order={quoteItem}/>);
   });
@@ -16,9 +15,17 @@ export const Quote = ({ quote, loading }) => {
   return (
     <div>
       <div className={'quote-items'}>
-        {quoteItems}
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            {quoteItems}
+          </div>
+          <div class="card-action white-text">
+            <Total total={quote.get('total')}/>
+          </div>
+        </div>
+
       </div>
-      <Total total={quote.get('total')}/>
+
     </div>
   );
 };

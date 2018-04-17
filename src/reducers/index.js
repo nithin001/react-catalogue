@@ -10,5 +10,5 @@ export default combineReducers({
   cart,
   catalog,
   quote,
-  ui
+  ui,
 });

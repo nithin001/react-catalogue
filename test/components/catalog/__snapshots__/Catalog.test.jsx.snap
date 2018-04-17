@@ -7,67 +7,49 @@ exports[`Catalog component should render the list of CatalogItems 1`] = `
   <div
     className="catalog-item"
   >
-    <a
-      href="/articles/199203"
-      onClick={[Function]}
+    <div
+      className="card white darken-1"
     >
-      <img
-        className="catalog-item__image"
-        src="https://picsum.photos/480/480/?image=6"
-      />
-    </a>
-    <span
-      className="catalog-item__name"
-    >
-      <span
-        className="catalog-item__name catalog-item__name--legend"
+      <div
+        className="card-content black-text"
       >
-        Name: 
-      </span>
-      <span
-        className="catalog-item__name catalog-item__name--value"
+        <span
+          className="card-title"
+        >
+          IPad
+          <br />
+          <span
+            className="currency"
+          >
+            229
+             
+            EUR
+          </span>
+        </span>
+        <img
+          className="catalog-item__image"
+          src="https://picsum.photos/480/480/?image=6"
+        />
+      </div>
+      <div
+        className="card-action"
       >
-        IPad
-      </span>
-    </span>
-    <br />
-    <span
-      className="catalog-item__price"
-    >
-      <span
-        className="catalog-item__price catalog-item__price--legend"
-      >
-        Price:  
-      </span>
-      <span
-        className="catalog-item__price catalog-item__price--amount"
-      >
-        229
-      </span>
-       
-      <span
-        className="catalog-item__price catalog-item__price--currency"
-      >
-        EUR
-      </span>
-    </span>
-    <br />
-    <a
-      href="/articles/199203"
-      onClick={[Function]}
-    >
-      <button
-        className="button"
-      >
-        View
-      </button>
-    </a>
-    <button
-      className="button button--inverted"
-      onClick={[Function]}
-    >
-      Add
-    </button>
+        <a
+          className="btn white-text "
+          href="/"
+          onClick={[Function]}
+        >
+          Add to Cart
+        </a>
+        <a
+          className="btn-flat"
+          href="/articles/199203"
+          onClick={[Function]}
+        >
+          View
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 `;

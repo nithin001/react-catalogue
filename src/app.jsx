@@ -13,15 +13,16 @@ import CartView from './views/CartView';
 import CatalogView from './views/CatalogView';
 
 import Header from './components/header';
+import Toaster from './components/toaster';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducer, composeEnhancers(
-  applyMiddleware(thunk)));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 const App = <Provider store={store}>
   <HashRouter>
     <div className={'app'}>
       <Header/>
+      <Toaster/>
       <Switch>
         <Route exact path="/" component={CatalogView}/>
         <Route path="/articles/:articleId" component={ArticleView}/>

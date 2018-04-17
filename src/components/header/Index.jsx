@@ -27,11 +27,14 @@ export class Header extends React.Component {
   }
 
   render () {
-    return (
-      <div className={'header'}>
-        <Title/>
-        <CartTeaser/>
-      </div>);
+    return (<div className={'navbar-fixed'}>
+      <nav >
+        <div className={'nav-wrapper'}>
+          <Title/>
+          <CartTeaser/>
+        </div>
+      </nav>
+    </div>);
   }
 }
 

@@ -12,21 +12,13 @@ class CatalogView extends React.Component {
   }
 
   render () {
-    if (this.props.error) {
-      return <span>Error loading catalog</span>;
-    } else if (!this.props.catalogAvailable || this.props.catalogLoading) {
-      return <span>Loading</span>;
-    } else {
-      return <div className={'catalog-view'}><Catalog/></div>;
-    }
+    return <div className={'catalog-view'}><Catalog/></div>;
   }
 }
 
 export const mapStateToProps = (state, ownProps) => {
   const catalogAvailable = state.catalog.size > 0;
-  const catalogLoading = state.ui.get('catalog_loading');
-  const error = state.ui.get('error');
-  return { catalogAvailable, catalogLoading, error };
+  return { catalogAvailable };
 };
 
 export const mapDispatchToProp = (dispatch) => ({

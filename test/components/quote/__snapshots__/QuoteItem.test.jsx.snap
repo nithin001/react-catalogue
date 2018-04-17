@@ -5,73 +5,41 @@ exports[`QuoteItem component should render the quote item with name, price, quan
   className="quote-item"
 >
   <span
-    className="quote-item__name"
+    class="card-title"
   >
+    Nice Product
+    <br />
     <span
-      className="quote-item__name quote-item__name--legend"
-    >
-      Name: 
-    </span>
-    <span
-      className="quote-item__name quote-item__name--value"
-    >
-      Nice Product
-    </span>
-  </span>
-  <br />
-  <span
-    className="quote-item__price"
-  >
-    <span
-      className="quote-item__name quote-item__name--legend"
-    >
-      Price: 
-    </span>
-    <span
-      className="quote-item__price quote-item__price--amount"
+      className="left"
+      style={
+        Object {
+          "fontSize": "small",
+          "fontStyle": "italic",
+        }
+      }
     >
       20
+       
+      EUR
+       X 
+      3
     </span>
-     
     <span
-      className="quote-item__price quote-item__price--currency"
+      className="right"
+      style={
+        Object {
+          "fontSize": "small",
+          "fontStyle": "italic",
+        }
+      }
     >
+      60
+       
       EUR
     </span>
   </span>
-  <br />
-  <span
-    className="quote-item__total-quantity"
-  >
-    <span
-      className="quote-item__quantity"
-    >
-      <span
-        className="quote-item__quantity quote-item__quantity--legend"
-      >
-        Quantity: 
-      </span>
-      <span
-        className="quote-item__quantity quote-item__quantity--value"
-      >
-        3
-      </span>
-    </span>
-    <span
-      className="quote-item__total"
-    >
-      <span
-        className="quote-item__total quote-item__total--amount"
-      >
-        60
-      </span>
-       
-      <span
-        className="quote-item__total quote-item__total--currency"
-      >
-        EUR
-      </span>
-    </span>
-  </span>
+  <div
+    className="clearfix"
+  />
 </div>
 `;

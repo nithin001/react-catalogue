@@ -23,6 +23,15 @@ describe('quote actions', () => {
         done();
       });
   });
+
+  it('should fire POPULATE_QUOTE action with empty payload when load quote is called with empty cart', () => {
+    const store = mockStore({});
+    store.dispatch(load([]));
+    let action = store.getActions()[0];
+    expect(action.type).toEqual('POPULATE_QUOTE');
+    expect(action.payload).toEqual([]);
+  });
+
   it('should call put cart api when load quote is called', (done) => {
     const spy = sinon.spy(api, 'put');
     const store = mockStore({});

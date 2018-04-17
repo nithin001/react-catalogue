@@ -1,11 +1,10 @@
 import Immutable from 'immutable';
+
 const cart = (state = Immutable.Map(), action) => {
   switch (action.type) {
     case 'POPULATE_CART': {
       const items = action.payload.lines;
-      return items.reduce((result, item) => {
-        return result.set(item.sku, item.quantity);
-      }, Immutable.Map());
+      return items.reduce((result, item) => result.set(item.sku, item.quantity), Immutable.Map());
     }
     case 'ADD_TO_CART': {
       const sku = action.payload;

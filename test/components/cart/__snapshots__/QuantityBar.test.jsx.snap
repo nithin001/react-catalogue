@@ -2,34 +2,20 @@
 
 exports[`QuantityBar component should render the QuantityBar component with current count and two buttons 1`] = `
 <div
-  className="quantity-bar"
+  class="card-action"
 >
-  <span
-    className="quantity"
-  >
-    <span
-      className="quantity--legend"
-    >
-      Quantity: 
-    </span>
-    <span
-      className="quantity--value"
-    >
-      1
-    </span>
-  </span>
-  <br />
   <button
-    className="button  "
+    className="btn"
     onClick={[Function]}
   >
-    Add to cart
+    Add more
   </button>
+   
   <button
-    className="button button--inverted"
+    className="btn-flat"
     onClick={[Function]}
   >
-    Remove from cart
+    Remove one
   </button>
 </div>
 `;

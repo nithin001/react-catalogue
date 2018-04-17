@@ -11,10 +11,10 @@ class ArticleView extends React.Component {
   }
 
   render () {
-    if (this.props.error) {
-      return <span>Error loading article</span>;
-    } else if (!this.props.articleAvailable || this.props.articleLoading) {
-      return <span>Loading</span>;
+    if (!this.props.articleAvailable) {
+      return (<div className="card-panel teal">
+        <span className="white-text">The item was not found.</span>
+      </div>);
     } else {
       return <div className={'article-view'}><Article/></div>;
     }

@@ -1,15 +1,7 @@
 .article {
   display: flex;
   flex-wrap: wrap;
-
-  &__price {
-    &--legend {
-      color: #333333;
-    }
-    &--amount, &--currency {
-      font-weight: bold;
-    }
-  }
+  width: 100%;
   &__left {
     width: 25%;
     @media screen and (max-width: $break-small) {
@@ -27,10 +19,6 @@
     @media screen and (max-width: $break-small) {
       width: 100%;
       padding: 0;
-    }
-
-    .name {
-      font-size: 24px;
     }
   }
 }

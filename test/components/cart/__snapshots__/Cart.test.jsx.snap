@@ -1,15 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Cart component should render empty cart 1`] = `
-<span>
-  No items in Cart
-</span>
+<div
+  className="card-panel teal"
+>
+  <span
+    className="white-text"
+  >
+    There are no items in the cart.
+  </span>
+</div>
 `;
 
 exports[`Cart component should render loading if loading 1`] = `
-<span>
-  Loading Cart
-</span>
+<div
+  className="cart-items"
+>
+  <Connect(CartItem)
+    key="199203"
+    quantity={3}
+    sku="199203"
+  />
+  <Connect(CartItem)
+    key="199204"
+    quantity={5}
+    sku="199204"
+  />
+</div>
 `;
 
 exports[`Cart component should render the list of CartItem components 1`] = `

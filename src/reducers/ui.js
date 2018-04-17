@@ -1,4 +1,5 @@
 import Immutable from 'immutable';
+
 const defaultState = Immutable.Map()
   .set('catalog_loading', false)
   .set('article_loading', false)

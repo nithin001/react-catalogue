@@ -12,32 +12,6 @@
     .cart-item {
       border-bottom: solid 1px #d3d3d3;
       padding: 10px 0;
-      &__name {
-        &--legend {
-          color: #333333;
-        }
-        &--value {
-          font-weight: bold;
-        }
-      }
-      &__price {
-        &--legend {
-          color: #333333;
-        }
-        &--amount, &--currency {
-          font-weight: bold;
-        }
-      }
-      .quantity-bar {
-        .quantity {
-          &--legend {
-            color: #333333;
-          }
-          &--value {
-            font-weight: bold;
-          }
-        }
-      }
     }
   }
   .quote {
@@ -50,61 +24,8 @@
     .quote-items {
       .quote-item {
         border-bottom: solid 1px #d3d3d3;
-        padding: 10px 0;
-        width: 100%;
-        &__total-quantity {
-          display: flex;
-          justify-content: space-between;
-        }
-        &__total {
-          display: flex;
-          justify-content: flex-end;
-          &--legend {
-            color: #333333;
-          }
-          &--amount, &--currency {
-            font-weight: bold;
-          }
-        }
-        &__name {
-          &--legend {
-            color: #333333;
-          }
-          &--value {
-            font-weight: bold;
-          }
-        }
-        &__quantity {
-          &--legend {
-            color: #333333;
-          }
-          &--value {
-            font-weight: bold;
-          }
-        }
-        &__price {
-          &--legend {
-            color: #333333;
-          }
-          &--amount, &--currency {
-            font-weight: bold;
-          }
-        }
+        margin-top: 5px;
       }
-    }
-    .quote-total {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-      &__legend {
-        color: #333333;
-      }
-      &__value {
-        &--amount, &--currency {
-          font-weight: bold;
-        }
-      }
-
     }
   }
 }

@@ -2,7 +2,7 @@
 
 exports[`title component should render the title component 1`] = `
 <a
-  className="header__title"
+  className="title left brand-logo"
   href="/"
   onClick={[Function]}
 >
