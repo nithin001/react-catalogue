@@ -78,4 +78,10 @@ This is a running document that captures design decisions, assumptions, limitati
    * Overall there are a lot of pieces in this commit that should be added to tech debt.
    * And if you rebase to this version, you should see a text based version of the app.
    
+## Screw up (A little bit!)
+   * I've completed styling the pages but I think I've screwed up a little bit. I could have spent more time in user interactions rather than tests.
+   * The pages look simple and neat. I've added a little bit of responsiveness (The checkout part in header, the quotation section in the cart view and the description in the article view will stack one below the other in a smaller view)
+   * I've decided to add a ui framework to the app. Please rebase to commit "adding styles to article page" if you want to see how the code looked before adding material ui.
+   * You can also open "without_framework/index.html" to see the output.
+   
    

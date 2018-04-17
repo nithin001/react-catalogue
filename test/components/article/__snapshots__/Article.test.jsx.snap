@@ -5,34 +5,59 @@ exports[`Article component should render the article item with name, image, desc
   className="article"
 >
   <span
-    className="name"
+    className="article__left"
   >
-    IPad
+    <img
+      className="image"
+      src="https://picsum.photos/480/480/?image=6"
+    />
   </span>
   <span
-    className="description"
+    className="article__right"
   >
-    test
+    <span
+      className="name"
+    >
+      IPad
+    </span>
+    <br />
+    <div
+      className="article_description"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test",
+        }
+      }
+    />
+    <br />
+    <span
+      className="article__price"
+    >
+      <span
+        className="article__price article__price--legend"
+      >
+        Price:  
+      </span>
+      <span
+        className="article__price article__price--amount"
+      >
+        229
+      </span>
+       
+      <span
+        className="article__price article__price--currency"
+      >
+        EUR
+      </span>
+    </span>
+    <br />
+    <br />
+    <button
+      className="button button-inverted"
+      onClick={[Function]}
+    >
+      Add to cart
+    </button>
   </span>
-  <img
-    className="image"
-    src="https://picsum.photos/480/480/?image=6"
-  />
-  <span
-    className="price-amount"
-  >
-    229
-  </span>
-  <span
-    className="price-currency"
-  >
-    EUR
-  </span>
-  <button
-    className="add-to-cart"
-    onClick={[Function]}
-  >
-    Add to cart
-  </button>
 </div>
 `;

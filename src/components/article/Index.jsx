@@ -4,15 +4,28 @@ import { addToCart } from '../../actions/cart';
 
 export const Article = ({ article, addToCart }) => {
   return <div className={'article'}>
-    <span className={'name'}>{article.get('name')}</span>
-    <span className={'description'}>{article.get('description')}</span>
-    <img src={article.get('image')} className={'image'}/>
-    <span className={'price-amount'}>{article.getIn(['price', 'amount'])}</span>
-    <span className={'price-currency'}>{article.getIn(['price', 'currency'])}</span>
-    <button className={'add-to-cart'} onClick={() => {
-      addToCart(article.get('sku'));
-    }}>Add to cart
-    </button>
+    <span className={'article__left'}>
+      <img src={article.get('image')} className={'image'}/>
+    </span>
+    <span className={'article__right'}>
+      <span className={'name'}>{article.get('name')}</span>
+      <br/>
+      <div className={'article_description'} dangerouslySetInnerHTML={
+        { __html: article.get('description') }}/>
+      <br/>
+      <span className={'article__price'}>
+        <span className={'article__price article__price--legend'}>Price: &nbsp;</span>
+        <span className={'article__price article__price--amount'}>{article.getIn(['price', 'amount'])}</span>
+        &nbsp;
+        <span className={'article__price article__price--currency'}>{article.getIn(
+          ['price', 'currency'])}</span>
+      </span>
+      <br/><br/>
+      <button className={'button button-inverted'} onClick={() => {
+        addToCart(article.get('sku'));
+      }}>Add to cart
+      </button>
+    </span>
   </div>;
 };
 
